@@ -1,5 +1,25 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  // Convert the word to lowercase to make the comparison case-insensitive
+  word = word.toLowerCase();
+
+  // Initialize two pointers, one at the beginning and one at the end of the word
+  let left = 0;
+  let right = word.length - 1;
+
+  // Iterate through the word, comparing characters from the beginning and the end
+  while (left < right) {
+    // If the characters are not the same, the word is not a palindrome
+    if (word[left] !== word[right]) {
+      return false;
+    }
+
+    // Move the pointers inward
+    left++;
+    right--;
+  }
+
+  // If the loop completes without returning false, the word is a palindrome
+  return true;
 }
 
 /* 
